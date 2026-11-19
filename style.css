@@ -47,3 +47,57 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    50% {
+        transform: translate(0);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.appear {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-3000vw);
+    }
+}
+
+.marquee {
+    position: absolute;
+    top: 3vh;
+    left: 0;
+    width: 100%;
+    font-size: 5vw;
+    line-height: 1;
+    overflow: hidden;
+
+    span {
+        animation: moveLeft 250s infinite;
+        white-space: nowrap;
+        display: block;
+        position: relative;
+    }
+}
+
+.mix-difference {
+    mix-blend-mode: difference;
+}
