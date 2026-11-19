@@ -7,11 +7,11 @@ body {
 .section {
     min-height: 100vh;
     display: flex;
+}
 
-    &-pad {
-        padding-left: 5vw;
-        padding-right: 5vw;
-    }
+.section-pad {
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 .container {
