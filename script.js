@@ -6,3 +6,43 @@ function makeMarquee() {
 }
 
 makeMarquee();
+
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const circles = document.querySelectorAll('.circle');
+
+circles.forEach((circle, index) => {
+  circle.animate(
+    [
+      { transform: 'scale(1)' },
+      { transform: 'scale(1.2)' },
+      { transform: 'scale(1)' },
+    ],
+    {
+      delay: 300 * index,
+      duration: 3000,
+      iterations: Infinity,
+    }
+  );
+});
+
+const squiggle = document.querySelectorAll('.squiggle');
+
+squiggle.forEach((squiggle, index) => {
+  const randomNumber = random(0, 45);
+
+  squiggle.animate(
+    [
+      { transform: 'rotate(0)' },
+      { transform: `rotate(${randomNumber}deg)` },
+      { transform: 'rotate(0)' },
+    ],
+    {
+      delay: 300 * index,
+      duration: 5000,
+      iterations: Infinity,
+    }
+  );
+});
